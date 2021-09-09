@@ -1,0 +1,180 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <title>Book Stack</title>
+
+    <style>
+      .card {
+        
+        margin: 0 auto;
+        float: none; 
+        z-index: 1;
+      }
+      body{
+        overflow-x: hidden;
+      }
+      .toggle {
+        background: white;
+        overflow: auto;
+        position: sticky;
+        max-width: 600px;
+        top:0;
+        left: 0;
+        padding: 15px 0;
+        white-space: nowrap;
+        z-index:3;
+        margin: auto;
+      }
+
+      .links {
+        padding: 10px 30px;
+        border-radius: 5px;
+        background: rgb(86, 159, 243);
+        margin: 0 15px;
+        display: inline-block;
+        font-size: 1.1rem;
+        cursor: pointer;
+      }
+
+      .links a{
+        text-decoration: none;
+        outline: none;
+        color: rgb(34, 31, 31);
+        text-transform: capitalize;
+        transition: 0.3s;
+      }
+      .links:hover {
+        background: #212121;
+      }
+      .links:hover a {
+        color: #fff;
+      }
+      
+      ::-webkit-scrollbar {
+        height: 3px;
+        background: #fff;
+      }
+      ::-webkit-scrollbar-thumb {
+        height: 3px;
+        background: black;
+      } 
+     
+
+    </style>
+
+</head>
+<body>
+
+      <div class="heading mt-3">
+          <center>
+          <h1>📚 <span>Book</span> <span>Stack</span></h1>
+        </center>
+      </div>
+
+      <div class="toggle">
+        <center>
+        <span class="links"><a href="{% url 'namesort' %}"><i class="fa fa-sort"></i> Name</a></span>
+        <span class="links"><a href="{% url 'datesort' %}"><i class="fa fa-sort"></i> Date</a></span>
+        <span class="links"><a href="{% url 'famesort' %}"><i class="fa fa-sort"></i> Fame</a></span>
+        </center>
+      </div>
+
+      <div class="cards-box mt-4">
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row no-gutters">
+              <div style="margin: auto" class="col-md-3">
+                <img src="{% static 'img/gt_img.jpg' %}" class="card-img" alt="card image">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Game of Thrones <br><span style="font-size: 12px;color: blue; background-color: lightgray; border-radius: 15px;">&nbsp @georgemartin &nbsp</span> <span style="font-size:13px" class="text-muted">89 views</span></h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet adipisicing elit. Optio ipsum id nam maxime velit, possimus ex, amet consectetur, nam maxime wil spot. </p>
+                  <p class="card-text"><small class="text-muted">Published on 1 Aug 1996</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row no-gutters">
+              <div style="margin: auto" class="col-md-3">
+                <img src="{% static 'img/hp_img.jpg' %}" class="card-img" alt="card image">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Harry Potter <br><span style="font-size: 12px;color: blue; background-color: lightgray; border-radius: 15px;">&nbsp @jkrowling &nbsp</span> <span style="font-size:13px" class="text-muted">210 views</span></h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet adipisicing elit. Optio ipsum id nam maxime velit, possimus ex, amet consectetur, nam maxime wil spot. </p>
+                  <p class="card-text"><small class="text-muted">Published on 26 June 1997</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row no-gutters">
+              <div style="margin: auto" class="col-md-3">
+                <img src="{% static 'img/hh_img.jpg' %}" class="card-img" alt="card image">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Hell House <br><span style="font-size: 12px;color: blue; background-color: lightgray; border-radius: 15px;">&nbsp @richardmatheson &nbsp</span> <span style="font-size:13px" class="text-muted">122 views</span></h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet adipisicing elit. Optio ipsum id nam maxime velit, possimus ex, amet consectetur, nam maxime wil spot. </p>
+                  <p class="card-text"><small class="text-muted">Published on 11 Jul 1971</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row no-gutters">
+              <div style="margin: auto" class="col-md-3">
+                <img src="{% static 'img/ot_img.jpeg' %}" class="card-img" alt="card image">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Odd Thomas <br><span style="font-size: 12px;color: blue; background-color: lightgray; border-radius: 15px;">&nbsp @deankoontz &nbsp</span> <span style="font-size:13px" class="text-muted">164 views</span></h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet adipisicing elit. Optio ipsum id nam maxime velit, possimus ex, amet consectetur, nam maxime wil spot. </p>
+                  <p class="card-text"><small class="text-muted">Published on 9 Dec 2003</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row no-gutters">
+            <div style="margin: auto" class="col-md-3">
+              <img src="{% static 'img/sp_img.jpg' %}" class="card-img" alt="card image">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Season of Passage <br><span style="font-size: 12px;color: blue; background-color: lightgray; border-radius: 15px;">&nbsp @chrispike &nbsp</span> <span style="font-size:13px" class="text-muted">142 views</span></h5>
+                <p class="card-text">Lorem ipsum dolor sit amet adipisicing elit. Optio ipsum id nam maxime velit, possimus ex, amet consectetur, nam maxime wil spot. </p>
+                <p class="card-text"><small class="text-muted">Published on 4 Aug 1992</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row no-gutters">
+              <div style="margin: auto" class="col-md-3">
+                <img src="{% static 'img/sr_img.jpg' %}" class="card-img" alt="card image">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Shawshank Redemption <br><span style="font-size: 12px;color: blue; background-color: lightgray; border-radius: 15px;">&nbsp @stephenking &nbsp</span> <span style="font-size:13px" class="text-muted">352 views</span></h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet adipisicing elit. Optio ipsum id nam maxime velit, possimus ex, amet consectetur, nam maxime wil spot. </p>
+                  <p class="card-text"><small class="text-muted">Published on 12 Feb 1982</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+     
+</body>
+</html>
